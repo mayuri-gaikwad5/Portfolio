@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Projects Gallery</title>
+  <link rel="stylesheet" href="project.css">
+</head>
+<body>
+
+<header class="header">
+    <nav class="navbar">
+      <div class="logo">Mayuri Gaikwad</div>
+      <ul class="nav-links">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/about/about.html">About</a></li> 
+        <li><a href="/skills/skills.html">Skills</a></li>
+        <li><a href="/proj/project.html">Projects</a></li> 
+        <li><a href="/reward/achievement.html">Achievements</a></li>
+      </ul>
+    </nav>
+</header>
+
+<section id="projects">
+    <h2>My Projects</h2>
+    <div class="project-gallery">
+      <div class="project-item">
+        <img src="timetable.png" alt="Project 1" class="project-image" data-project="/assig_4/assi4.html">
+        <p class="project-name">Project 1: Timetable Generator</p>
+      </div>
+      <div class="project-item">
+        <img src="countdown.jpg" alt="Project 2" class="project-image" data-project="/assig_5/countdown.html">
+        <p class="project-name">Project 2: Countdown Timer</p>
+      </div>
+      <div class="project-item">
+        <img src="Date_time.jpeg" alt="Project 3" class="project-image" data-project="/assig_5/Date_time.html">
+        <p class="project-name">Project 3: Display Current date and Time</p>
+      </div>
+      <div class="project-item">
+        <img src="dimension.png" alt="Project 4" class="project-image" data-project="/assig_5/image_dimension.html">
+        <p class="project-name">Project 4: To Check Image Dimensions</p>
+      </div>
+      <div class="project-item">
+        <img src="form.png" alt="Project 5" class="project-image" data-project="/ISE 2/index.html">
+        <p class="project-name">Project 5:Form</p>
+      </div>
+      <div class="project-item">
+        <img src="quiz.jpg" alt="Project 6" class="project-image" data-project="/Quiz game/index.html">
+        <p class="project-name">Project 6:Quiz game</p>
+      </div>
+      <div class="project-item">
+        <img src="pdf_converter.png" alt="Project 7" class="project-image" data-project="/ISE_3/index.html">
+        <p class="project-name">Project 7:form to pdf Converter</p>
+      </div>
+      <div class="project-item">
+        <img src="leap_year.jpg" alt="Project 8" class="project-image" data-project="/assig_5/leap_year.html">
+        <p class="project-name">Project 8:Leap Year</p>
+      </div>
+      <div class="project-item">
+        <img src="random_num.png" alt="Project 9" class="project-image" data-project="/assig_5/random_number.html">
+        <p class="project-name">Project 9:Random Number Generator</p>
+      </div>
+      <div class="project-item">
+        <img src="php.png" alt="Project X" class="project-image" data-project="/skills/quiz_php.mp4">
+        <p class="project-name">Project 10:PHP project</p>
+      </div>
+      
+      <!-- Add more project items -->
+    </div>
+  </section>
+  
+
+<!-- Modal -->
+<div id="modal" class="modal">
+  <span class="close">&times;</span>
+  <button class="open-new-window" onclick="openInNewWindow()">Open in New Window</button>
+  <iframe id="modal-content" src="" frameborder="0"></iframe>
+</div>
+
+<script src="project.js"></script>
+</body>
+</html>
+
