@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leap Year Checker</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #74ebd5, #ACB6E5);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: white;
+        }
+
+        .container {
+            background: white;
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 20px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input {
+            padding: 10px;
+            width: 80%;
+            margin-bottom: 20px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Leap Year Checker 🌟</h1>
+        <input type="number" id="yearInput" placeholder="Enter a year" />
+        <br>
+        <button onclick="checkLeapYear()">Check</button>
+    </div>
+
+    <script>
+        function checkLeapYear() {
+            const year = document.getElementById('yearInput').value;
+
+            if (year === "") {
+                alert("Please enter a year!");
+                return;
+            }
+
+            if (year % 4 === 0) {
+                if (year % 100 === 0) {
+                    if (year % 400 === 0) {
+                        alert(year + " is a Leap Year! 🎉");
+                    } else {
+                        alert(year + " is NOT a Leap Year. ❌");
+                    }
+                } else {
+                    alert(year + " is a Leap Year! 🎉");
+                }
+            } else {
+                alert(year + " is NOT a Leap Year. ❌");
+            }
+        }
+    </script>
+
+</body>
+</html>

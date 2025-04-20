@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Dimension Checker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+      background-color: aliceblue;
+    }
+    input[type="file"], button {
+      margin: 15px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #4CAF50;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    #preview {
+      margin-top: 20px;
+      max-width: 300px;
+      max-height: 300px;
+      border: 2px solid #4CAF50;
+      border-radius: 8px;
+      padding: 5px;
+      background-color: #fff;
+    }
+    #info {
+      font-size: 18px;
+      margin-top: 20px;
+      color: #333;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Check Image Details</h1>
+
+  <input type="file" id="imageInput" accept="image/*" />
+  <button id="resetButton" style="display:none;">Reset</button>
+
+  <div id="preview-container">
+    <img id="preview" src="" alt="Image preview will appear here" style="display: none;">
+  </div>
+  
+  <div id="info"></div>
+
+  <script>
+    function getImageDetails(imageFile) {
+      const img = new Image();
+      const reader = new FileReader();
+
+      reader.onload = function(e) {
+        img.onload = function() {
+          const width = img.width;
+          const height = img.height;
+          const fileSizeKB = (imageFile.size / 1024).toFixed(2);
+          const fileName = imageFile.name;
+          const fileType = imageFile.type;
+
+          document.getElementById("info").innerHTML = `
+            <strong>File Name:</strong> ${fileName} <br>
+            <strong>File Type:</strong> ${fileType} <br>
+            <strong>Width:</strong> ${width}px <br>
+            <strong>Height:</strong> ${height}px <br>
+            <strong>Size:</strong> ${fileSizeKB} KB
+          `;
+
+          const preview = document.getElementById("preview");
+          preview.src = e.target.result;
+          preview.style.display = "block";
+
+          document.getElementById("resetButton").style.display = "inline-block";
+        };
+        img.src = e.target.result;
+      };
+
+      reader.readAsDataURL(imageFile);
+    }
+
+    document.getElementById("imageInput").addEventListener("change", function(event) {
+      const imageFile = event.target.files[0];
+      if (imageFile) {
+        getImageDetails(imageFile);
+      }
+    });
+
+    document.getElementById("resetButton").addEventListener("click", function() {
+      document.getElementById("imageInput").value = '';
+      document.getElementById("preview").style.display = "none";
+      document.getElementById("info").innerHTML = '';
+      document.getElementById("resetButton").style.display = "none";
+    });
+  </script>
+
+</body>
+</html>
+
+

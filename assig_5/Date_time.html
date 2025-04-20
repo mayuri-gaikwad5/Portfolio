@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Display Date and Time with Greeting</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+      background-color: aliceblue;
+    }
+    #greeting {
+      font-size: 30px;
+      font-weight: bold;
+      color: #ff7f50;
+      margin-bottom: 20px;
+    }
+    #date-time {
+      font-size: 28px;
+      font-weight: bold;
+      color: #4CAF50;
+      transition: transform 0.5s ease;
+    }
+    .pulse {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Live Date, Time, and Greeting</h1>
+  <div id="greeting"></div>
+  <div id="date-time"></div>
+
+  <script>
+    function updateDateTime() {
+      const currentDateTime = new Date();
+
+      const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+      const dayName = daysOfWeek[currentDateTime.getDay()];
+
+      let hours = currentDateTime.getHours();
+      const minutes = String(currentDateTime.getMinutes()).padStart(2, '0');
+      const seconds = String(currentDateTime.getSeconds()).padStart(2, '0');
+
+      const day = currentDateTime.getDate();
+      const monthNames = ["January", "February", "March", "April", "May", "June",
+                          "July", "August", "September", "October", "November", "December"];
+      const month = monthNames[currentDateTime.getMonth()];
+      const year = currentDateTime.getFullYear();
+
+      const ampm = hours >= 12 ? 'PM' : 'AM';
+      const greetingElement = document.getElementById('greeting');
+
+      // Greeting based on hours
+      let greetingText = "";
+      if (hours >= 5 && hours < 12) {
+        greetingText = "Good Morning ☀️";
+      } else if (hours >= 12 && hours < 17) {
+        greetingText = "Good Afternoon 🌞";
+      } else if (hours >= 17 && hours < 21) {
+        greetingText = "Good Evening 🌇";
+      } else {
+        greetingText = "Good Night 🌙";
+      }
+      greetingElement.textContent = greetingText;
+
+      hours = hours % 12 || 12; // 0 becomes 12 in 12-hour format
+      hours = String(hours).padStart(2, '0');
+
+      const formattedDateTime = `${dayName}, ${month} ${day}, ${year} ${hours}:${minutes}:${seconds} ${ampm}`;
+
+      const dateTimeElement = document.getElementById('date-time');
+      dateTimeElement.textContent = formattedDateTime;
+
+      // Add animation
+      dateTimeElement.classList.add('pulse');
+      greetingElement.classList.add('pulse');
+      setTimeout(() => {
+        dateTimeElement.classList.remove('pulse');
+        greetingElement.classList.remove('pulse');
+      }, 500);
+    }
+
+    setInterval(updateDateTime, 1000);
+    updateDateTime();
+  </script>
+
+</body>
+</html>
