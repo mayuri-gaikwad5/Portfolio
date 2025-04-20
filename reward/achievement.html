@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Achievements</title>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Font Awesome (for icons if needed) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+ <!-- Navbar -->
+<header class="header">
+  <nav class="navbar">
+    <div class="logo">Mayuri Gaikwad</div>
+    <ul class="nav-links">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/about/about.html">About</a></li> 
+      <li><a href="/skills/skills.html">Skills</a></li>
+      <li><a href="/proj/project.html">Projects</a></li> 
+      <li><a href="/reward/achievement.html">Achievements</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <section class="achievements-section">
+    <h2>My Achievements</h2>
+
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="tech">Technical</button>
+      <button class="filter-btn" data-filter="non-tech">Non-Technical</button>
+    </div>
+
+    <div class="achievements-container">
+
+      <div class="achievement-card tech">
+        <img src="/certificate/idea_spark_2024.png" alt="Tech Competition" class="achievement-img">
+        <div class="achievement-desc">Idea Spark 2024</div>
+      </div>
+
+      <div class="achievement-card non-tech">
+        <img src="/certificate/paper_spark_2024.png" alt="Tech Competition" class="achievement-img">
+        <div class="achievement-desc">Paper Spark 2024</div>
+      </div>
+
+      <div class="achievement-card tech">
+        <img src="/certificate/quiztronics_2024.png" alt="Tech Competition" class="achievement-img">
+        <div class="achievement-desc">quiztronics 2024</div>
+      </div>
+
+      <div class="achievement-card tech">
+        <img src="/certificate/pro_contest_2024.png" alt="Sports Event" class="achievement-img">
+        <div class="achievement-desc">Programming Contest 2024</div>
+      </div>
+
+      <div class="achievement-card tech">
+        <img src="/certificate/innoverse_2024.png" alt="Workshop" class="achievement-img">
+        <div class="achievement-desc">innoverse_2024</div>
+      </div>
+
+      <div class="achievement-card tech">
+        <img src="/certificate/proj_comp_2024.png" alt="Workshop" class="achievement-img">
+        <div class="achievement-desc">Project Competition 2024</div>
+      </div>
+
+      <div class="achievement-card non-tech">
+        <img src="/certificate/group_disscussion_2024.png" alt="Workshop" class="achievement-img">
+        <div class="achievement-desc">group_disscussion 2024</div>
+      </div>
+
+      <div class="achievement-card tech">
+        <img src="/certificate/proj_comp_2024.png" alt="Workshop" class="achievement-img">
+        <div class="achievement-desc">Project Competition 2024</div>
+      </div>
+
+      <!-- Add more cards as needed -->
+
+    </div>
+  </section>
+
+  <!-- Popup Overlay -->
+  <div id="popup-overlay" class="hidden">
+    <span id="close-btn">&times;</span>
+    <img id="popup-img" src="" alt="Fullscreen Achievement">
+
+    <button id="prev-btn">&#10094;</button>
+    <button id="next-btn">&#10095;</button>
+  </div>
+
+  <!-- External JS -->
+  <script src="script.js"></script>
+</body>
+</html>
