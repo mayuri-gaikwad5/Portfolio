@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PDF Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>PDF Generator</h1>
+    </header>
+  <form id="pdfForm">
+    <label for="name">Name:</label><br />
+    <input type="text" id="name" name="name"><br /><br />
+
+    <label for="email">Email:</label><br />
+    <input type="email" id="email" name="email"><br /><br />
+    
+    <label for="phone">Phone:</label><br />
+    <input type="tel" id="phone" name="phone"><br /><br />
+
+    <label for="branch">Branch:</label><br />
+    <input type="text" id="branch" name="branch"><br /><br />
+
+    <label for="message">Message:</label><br />
+    <textarea id="message" name="message" rows="4" cols="50"></textarea><br /><br />
+
+    <button type="button" onclick="generatePDF()">Download PDF</button>
+  </form>
+
+  <!-- jsPDF library from CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
