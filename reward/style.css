@@ -1,3 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Basic Light Theme */
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #f9f9f9;
+    color: #333;
+  }
+  
+/* Navbar */
+.home {
+    padding-top: 100px; /* To avoid content getting hidden behind navbar */
+  }
+  
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+  }
+  
+  .logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffd700;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .nav-links li a:hover {
+    color: #ffd700;
+  }
+  
 /* Achievements Section */
 #achievements {
   padding: 120px 20px 40px 20px; /* Increased top padding */
