@@ -2,97 +2,76 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Achievements</title>
-
-  <!-- External CSS -->
-  <link rel="stylesheet" href="style.css">
-
-  <!-- Font Awesome (for icons if needed) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Achievements Gallery</title>
+  <link rel="stylesheet" href="../reward/achievement.css"> <!-- Link your correct CSS file -->
 </head>
 <body>
 
- <!-- Navbar -->
 <header class="header">
   <nav class="navbar">
     <div class="logo">Mayuri Gaikwad</div>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about/about.html">About</a></li> 
-      <li><a href="skills/skills.html">Skills</a></li>
-      <li><a href="proj/project.html">Projects</a></li> 
-      <li><a href="reward/achievement.html">Achievements</a></li>
+      <li><a href="../index.html">Home</a></li> 
+      <li><a href="../about/about.html">About</a></li> 
+      <li><a href="../skills/skills.html">Skills</a></li>
+      <li><a href="../proj/project.html">Projects</a></li> 
+      <li><a href="../reward/achievement.html">Achievements</a></li>
     </ul>
   </nav>
 </header>
 
-  <section class="achievements-section">
-    <h2>My Achievements</h2>
+<section id="achievements">
+  <h2>My Achievements</h2>
+  <div class="achievement-gallery">
 
-    <div class="filter-buttons">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="tech">Technical</button>
-      <button class="filter-btn" data-filter="non-tech">Non-Technical</button>
+    <div class="achievement-item">
+      <img src="../certificate/idea_spark_2024.png" alt="Idea Spark 2024" class="achievement-image" data-achievement="../certificate/idea_spark_2024.png">
+      <p class="achievement-name">Idea Spark 2024</p>
     </div>
 
-    <div class="achievements-container">
-
-      <div class="achievement-card tech">
-        <img src="/certificate/idea_spark_2024.png" alt="Tech Competition" class="achievement-img">
-        <div class="achievement-desc">Idea Spark 2024</div>
-      </div>
-
-      <div class="achievement-card non-tech">
-        <img src="/certificate/paper_spark_2024.png" alt="Tech Competition" class="achievement-img">
-        <div class="achievement-desc">Paper Spark 2024</div>
-      </div>
-
-      <div class="achievement-card tech">
-        <img src="/certificate/quiztronics_2024.png" alt="Tech Competition" class="achievement-img">
-        <div class="achievement-desc">quiztronics 2024</div>
-      </div>
-
-      <div class="achievement-card tech">
-        <img src="/certificate/pro_contest_2024.png" alt="Sports Event" class="achievement-img">
-        <div class="achievement-desc">Programming Contest 2024</div>
-      </div>
-
-      <div class="achievement-card tech">
-        <img src="/certificate/innoverse_2024.png" alt="Workshop" class="achievement-img">
-        <div class="achievement-desc">innoverse_2024</div>
-      </div>
-
-      <div class="achievement-card tech">
-        <img src="/certificate/proj_comp_2024.png" alt="Workshop" class="achievement-img">
-        <div class="achievement-desc">Project Competition 2024</div>
-      </div>
-
-      <div class="achievement-card non-tech">
-        <img src="/certificate/group_disscussion_2024.png" alt="Workshop" class="achievement-img">
-        <div class="achievement-desc">group_disscussion 2024</div>
-      </div>
-
-      <div class="achievement-card tech">
-        <img src="/certificate/proj_comp_2024.png" alt="Workshop" class="achievement-img">
-        <div class="achievement-desc">Project Competition 2024</div>
-      </div>
-
-      <!-- Add more cards as needed -->
-
+    <div class="achievement-item">
+      <img src="../certificate/paper_spark_2024.png" alt="Paper Spark 2024" class="achievement-image" data-achievement="../certificate/paper_spark_2024.png">
+      <p class="achievement-name">Paper Spark 2024</p>
     </div>
-  </section>
 
-  <!-- Popup Overlay -->
-  <div id="popup-overlay" class="hidden">
-    <span id="close-btn">&times;</span>
-    <img id="popup-img" src="" alt="Fullscreen Achievement">
+    <div class="achievement-item">
+      <img src="../certificate/quiztronics_2024.png" alt="Quiztronics 2024" class="achievement-image" data-achievement="../certificate/quiztronics_2024.png">
+      <p class="achievement-name">Quiztronics 2024</p>
+    </div>
 
-    <button id="prev-btn">&#10094;</button>
-    <button id="next-btn">&#10095;</button>
+    <div class="achievement-item">
+      <img src="../certificate/pro_contest_2024.png" alt="Programming Contest 2024" class="achievement-image" data-achievement="../certificate/pro_contest_2024.png">
+      <p class="achievement-name">Programming Contest 2024</p>
+    </div>
+
+    <div class="achievement-item">
+      <img src="../certificate/innoverse_2024.png" alt="Innoverse 2024" class="achievement-image" data-achievement="../certificate/innoverse_2024.png">
+      <p class="achievement-name">Innoverse 2024</p>
+    </div>
+
+    <div class="achievement-item">
+      <img src="../certificate/proj_comp_2024.png" alt="Project Competition 2024" class="achievement-image" data-achievement="../certificate/proj_comp_2024.png">
+      <p class="achievement-name">Project Competition 2024</p>
+    </div>
+
+    <div class="achievement-item">
+      <img src="../certificate/group_disscussion_2024.png" alt="Group Discussion 2024" class="achievement-image" data-achievement="../certificate/group_disscussion_2024.png">
+      <p class="achievement-name">Group Discussion 2024</p>
+    </div>
+
+    <!-- Add more achievements similarly -->
+
   </div>
+</section>
 
-  <!-- External JS -->
-  <script src="script.js"></script>
+<!-- Modal -->
+<div id="modal" class="modal">
+  <span class="close">&times;</span>
+  <button class="open-new-window" onclick="openInNewWindow()">Open in New Window</button>
+  <img id="modal-content" src="" alt="Fullscreen Achievement">
+</div>
+
+<script src="../reward/achievement.js"></script> <!-- Link your JS properly -->
 </body>
 </html>
+
