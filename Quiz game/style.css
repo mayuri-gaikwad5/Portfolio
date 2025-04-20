@@ -1,0 +1,52 @@
+/* Basic styling for the quiz game */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.quiz-container {
+    text-align: center;
+    background-color: #e8f3c9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 30px;
+    width: 350px;
+}
+
+h1 {
+    color: #4CAF50;
+}
+
+.question {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.options button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.options button:hover {
+    background-color: #45a049;
+}
+
+.result {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff5733;
+}
