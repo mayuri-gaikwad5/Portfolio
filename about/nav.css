@@ -1,8 +1,8 @@
 /* Navbar */
 .home {
     padding-top: 100px; /* To avoid content getting hidden behind navbar */
-  }
-  
+}
+
 .header {
     width: 100%;
     position: fixed;
@@ -10,36 +10,100 @@
     left: 0;
     background: rgba(0, 0, 0, 0.8);
     z-index: 1000;
-  }
-  
-  .navbar {
+}
+
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 3rem;
-  }
-  
-  .logo {
+}
+
+.logo {
     font-size: 2rem;
     font-weight: bold;
     color: #ffd700;
-  }
-  
-  .nav-links {
+}
+
+.nav-links {
     list-style: none;
     display: flex;
     gap: 2rem;
-  }
-  
-  .nav-links li a {
+}
+
+.nav-links li a {
     color: white;
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: 500;
     transition: color 0.3s;
-  }
-  
-  .nav-links li a:hover {
+}
+
+.nav-links li a:hover {
     color: #ffd700;
-  }
-  
+}
+
+/* For Mobile Devices (Hamburger menu) */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem 1.5rem;
+    }
+
+    .nav-links {
+        display: none; /* Hide nav links on mobile */
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: rgba(0, 0, 0, 0.9);
+        width: 100%;
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .nav-links li {
+        margin: 1rem 0;
+    }
+
+    .navbar .logo {
+        font-size: 1.8rem;
+    }
+
+    /* Hide the checkbox input and label (hamburger icon) */
+    .menu-icon {
+        display: none;
+    }
+
+    /* Create the Hamburger Icon */
+    .menu-toggle:checked + .nav-links {
+        display: flex; /* Show nav links when checkbox is checked */
+        flex-direction: column;
+    }
+
+    /* Hide the checkbox input */
+    .menu-toggle {
+        display: none;
+    }
+
+    /* Create the Hamburger Icon */
+    .menu-icon {
+        display: block;
+        font-size: 2rem;
+        color: white;
+        cursor: pointer;
+    }
+
+    .menu-icon::before {
+        content: '\2630'; /* Unicode character for hamburger icon (three horizontal lines) */
+    }
+}
+
+/* For very small screens (mobile portrait) */
+@media (max-width: 480px) {
+    .navbar .logo {
+        font-size: 1.5rem;
+    }
+
+    .nav-links li a {
+        font-size: 1rem;
+    }
+}
