@@ -1,44 +1,88 @@
-/* Navbar */
+/* Navbar Container */
 .home {
-    padding-top: 100px; /* To avoid content getting hidden behind navbar */
-  }
-  
+  padding-top: 100px; /* Prevent content from hiding under fixed navbar */
+}
+
 .header {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.8);
-    z-index: 1000;
-  }
-  
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffd700;
+}
+
+/* Navigation Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #ffd700;
+}
+
+/* Hamburger Menu Button */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.menu-toggle span {
+  height: 3px;
+  width: 25px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
   .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 3rem;
+    padding: 1rem 1.5rem;
   }
-  
-  .logo {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #ffd700;
-  }
-  
+
   .nav-links {
-    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    padding: 1rem 0;
+  }
+
+  .nav-links.active {
     display: flex;
-    gap: 2rem;
   }
-  
-  .nav-links li a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 500;
-    transition: color 0.3s;
+
+  .menu-toggle {
+    display: flex;
   }
-  
-  .nav-links li a:hover {
-    color: #ffd700;
-  }
+}
