@@ -1,9 +1,20 @@
-// JavaScript to add "active" class to the current navigation link
-const navLinks = document.querySelectorAll('.nav-links a');
+// Toggle nav menu on mobile
+const menuToggle = document.getElementById('menu-toggle');
+const navLinks = document.getElementById('nav-links');
 
-navLinks.forEach(link => {
+menuToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+
+// Add active class on link click
+const navItems = document.querySelectorAll('.nav-links a');
+
+navItems.forEach(link => {
   link.addEventListener('click', () => {
-    navLinks.forEach(item => item.classList.remove('active'));
+    navItems.forEach(item => item.classList.remove('active'));
     link.classList.add('active');
+
+    // Close menu on mobile after clicking
+    navLinks.classList.remove('active');
   });
 });
